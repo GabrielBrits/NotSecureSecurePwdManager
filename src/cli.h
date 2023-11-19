@@ -4,6 +4,6 @@
 
 #ifndef NOTSECURESECUREPWDMANAGER_CLI_H
 #define NOTSECURESECUREPWDMANAGER_CLI_H
-int handlecmdargs(int argc, char* argv[]);
+int HandleCmdArgs(int argc, char* argv[], bool fileCheck);
 
 #endif //NOTSECURESECUREPWDMANAGER_CLI_H

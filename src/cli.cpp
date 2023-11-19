@@ -1,19 +1,20 @@
 //
 // Created by User on 17/11/2023.
 //
-#include <filesystem>
+
 #include <iostream>
+#include <stdexcept>
+#include <cstring>
+#include "program_options.h"
 
-int checkfileexists() {
-    std::cout << "hello";
-    return (std::filesystem::exists("helloworld.txt"));
-}
-
-int handlecmdargs(int argc, char* argv[]) {
+int HandleCmdArgs(int argc, char* argv[], bool fileCheck) {
+    // Handle if the .pwd file doesn't exist (prompt for one)
     if (argc < 2) {
         return 0;
+    } else if (argc > 58) {
+        throw std::invalid_argument("received too many arguments, a note's max size is 50 chars");
     }
-    int checkFile = checkfileexists();
-    std::cout << checkFile;
+    int i = ProgramOptions(argc, argv);
+
     return 1;
 }
